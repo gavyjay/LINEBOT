@@ -8,7 +8,8 @@ $access_token = 'ecSSSh4xNn+Ku1HctPBfLytO+DX+nQiugW8Nkqopalvo3c33Auaho90Uct8SA81
                                    $to = $jsonObj->{"result"}[0]->{"content"}->{"from"}; //หาผู้ส่ง 
                                    $text = $jsonObj->{"result"}[0]->{"content"}->{"text"}; //หาข้อความที่โพสมา 
                                    $text_ex = explode(':', $text); //เอาข้อความมาแยก : ได้เป็น Array 
-                                   if($text_ex[0] == "อยากรู้"){ //ถ้าข้อความคือ "อยากรู้" ให้ทำการดึงข้อมูลจาก Wikipedia หาจากไทยก่อน //https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=PHP 
+                                   if($text_ex[0] == "อยากรู้"){ //ถ้าข้อความคือ "อยากรู้" ให้ทำการดึงข้อมูลจาก Wikipedia หาจากไทยก่อน 
+ //https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=PHP 
                                        $ch1 = curl_init(); 
                                        curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false); 
                                        curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true); 
