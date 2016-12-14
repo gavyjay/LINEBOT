@@ -16,8 +16,8 @@ if (!is_null($events['events'])) {
 			$text = strtolower($text);
 			$txtarray = array('Hi'=>'Hello!',
 		'How are you?'=>'Fine, Thank you :)',
-		'Hey'=>'Hey! What\'s up? \n What can I do for you?',
-    'Thank you'=>'You\'re wellcome!'
+		'Hey'=>'Hey! What\'s up? \r What can I do for you?',
+    'Thank you'=>'You\'re wellcome!',
 );
 			foreach($txtarray as $key => $val){
 							 
