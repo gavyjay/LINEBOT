@@ -21,5 +21,11 @@ define("LINEBOT_CHANNEL_TOKEN", 'ecSSSh4xNn+Ku1HctPBfLytO+DX+nQiugW8Nkqopalvo3c3
 $httpClient = new CurlHTTPClient(LINEBOT_CHANNEL_TOKEN);
 $bot = new LINEBot($httpClient, ['channelSecret' => LINEBOT_CHANNEL_SECRET]);
 
+// Get POST body content
+$content = file_get_contents('php://input');
+// Parse JSON
+$events = json_decode($content, true);
+$replyToken = $event['replyToken'];
+$response = $bot->replyText($replyToken, 'hello!');
 
 ?>
