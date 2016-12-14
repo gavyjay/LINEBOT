@@ -30,7 +30,9 @@ $events = json_decode($content, true);
 $text = $event['message']['text'];
 // Get replyToken
 $replyToken = $event['replyToken'];
-$response = $bot->replyMessage($replyToken, $textMessageBuilder);
+$response = $bot->replyMessage($replyToken, $text);
+
+
 
 if ($response->isSucceeded()) {
     echo 'Succeeded!';
