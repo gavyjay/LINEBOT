@@ -5,5 +5,6 @@ return array('Hi'=>'Hello!',
     		'Thank you'=>'You\'re wellcome!',
 	        'เคลือบแก้ว'=>'เคลือบโปรแกรมไหนดีคะ?',
 	        'โปรแกรมเคลือบแก้ว'=>'https://www.facebook.com/albatroscarcare',
+	     	'???'=>'???',
 );
 ?>
