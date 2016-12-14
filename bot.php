@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 				      'How are you?'=>'Fine, Thank you :)',
 				      'Hey'=>'Hey! What\'s up?'
 				    );*/
-			include 'textresponse.php';
+			require_once('textresponse.php');
 			foreach($txtarray as $key => $val){
 							 
 				if($text== strtolower($key)){
