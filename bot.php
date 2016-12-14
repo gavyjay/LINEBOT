@@ -13,14 +13,14 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
-			$response = array('Hi'=>'Hello!',
+			$txtarray = array('Hi'=>'Hello!',
 				      'How are you?'=>'Fine, Thank you :)',
 				      'Hey'=>'Hey! What\'s up?'
 				    );
-			foreach($response as $key => $val){
+			foreach($txtarray as $key => $val){
 							 
 				if($text== $key){
-					$text = $val;	
+					$res = $val;	
 				}
 			}
 			// Get replyToken
@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $res
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
