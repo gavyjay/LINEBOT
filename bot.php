@@ -19,6 +19,8 @@ if (!is_null($events['events'])) {
 							 
 				if($text== strtolower($key)){
 					$res = $val;	
+				}else{
+					$res = 'ขอโทษค่ะ หาข้อมูลไม่พบ';
 				}
 			}
 			// Get replyToken
