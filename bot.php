@@ -13,8 +13,16 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
-			if($text==='Hi'){
-				$text = 'What\'s up?';	
+			$response = ['Hi'=>'Hello!',
+				      'How are you?'=>'Fine, Thank you :)',
+				      'Hey'=>'Hey! What\'s up?'
+				    ];
+			foreach($response as $key => $val)
+			{
+				$result_text[$key] = $val;
+			 
+			if($text== $result_text[$key]){
+				$text = $val;	
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -44,6 +52,8 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
+				}
+			}
 		}
 	}
 }
