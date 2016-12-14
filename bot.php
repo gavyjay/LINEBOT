@@ -16,11 +16,9 @@ if (!is_null($events['events'])) {
 			$text = strtolower($text);
 			$txtarray = include('textresponse.php');
 			foreach($txtarray as $key => $val){
-							 
+				$res = 'ขอโทษค่ะ หาข้อมูลไม่พบ';			 
 				if($text== strtolower($key)){
 					$res = $val;	
-				}else if($text!= strtolower($key)){{
-					$res = 'ขอโทษค่ะ หาข้อมูลไม่พบ';
 				}
 			}
 			// Get replyToken
