@@ -27,20 +27,28 @@ $textMessageBuilder = new TextMessageBuilder('hello');
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-$text = $event['message']['text'];
-// Get replyToken
-$replyToken = $event['replyToken'];
-$response = $bot->replyMessage($replyToken, $text);
+
+
+if (!is_null($events['events'])) {
+	// Loop through each event
+	foreach ($events['events'] as $event) {
+		// Reply only when message sent is in 'text' format
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+            $text = $event['message']['text'];
+            // Get replyToken
+            $replyToken = $event['replyToken'];
+            $response = $bot->replyMessage($replyToken, $text);
 
 
 
-if ($response->isSucceeded()) {
-    echo 'Succeeded!';
-    return;
+            if ($response->isSucceeded()) {
+                echo 'Succeeded!';
+                return;
+            }
+
+        // Failed
+        echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+        }
+	}
 }
 
-// Failed
-
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-
-?>
