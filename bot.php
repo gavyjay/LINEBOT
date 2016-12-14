@@ -17,12 +17,12 @@ if (!is_null($events['events'])) {
 				      'How are you?'=>'Fine, Thank you :)',
 				      'Hey'=>'Hey! What\'s up?'
 				    );
-			foreach($response as $key => $val)
-			{
+			foreach($response as $key => $val){
 				$result_text[$key] = $val;
 			 
-			if($text== $result_text[$key]){
-				$text = $val;	
+				if($text== $result_text[$key]){
+					$text = $val;	
+				}
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -52,8 +52,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-				}
-			}
+				
 		}
 	}
 }
