@@ -18,9 +18,8 @@ if (!is_null($events['events'])) {
 				      'Hey'=>'Hey! What\'s up?'
 				    );
 			foreach($response as $key => $val){
-				$result_text[$key] = $val;
-			 
-				if($text== $result_text[$key]){
+							 
+				if($text== $key){
 					$text = $val;	
 				}
 			}
