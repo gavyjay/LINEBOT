@@ -16,10 +16,8 @@ if (!is_null($events['events'])) {
 			$text = strtolower($text);
 			$txtarray = include('textresponse.php');
 			foreach($txtarray as $key => $val){						 
-				if(!empty(strtolower($key)) == $text){
+				if($text == strtolower($key)){
 					$res = $val;	
-				}else{
-					$res == "ไม่พบข้อมูล";
 				}
 			}
 			
