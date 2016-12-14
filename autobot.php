@@ -22,3 +22,4 @@ $httpClient = new CurlHTTPClient(LINEBOT_CHANNEL_TOKEN);
 $bot = new LINEBot($httpClient, ['channelSecret' => LINEBOT_CHANNEL_SECRET]);
 
 
+?>
