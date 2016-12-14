@@ -14,11 +14,11 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['message']['text'];
 			$text = strtolower($text);
-			/*$txtarray = array('Hi'=>'Hello!',
-				      'How are you?'=>'Fine, Thank you :)',
-				      'Hey'=>'Hey! What\'s up?'
-				    );*/
-			require_once('textresponse.php');
+			$txtarray = array('Hi'=>'Hello!',
+		'How are you?'=>'Fine, Thank you :)',
+		'Hey'=>'Hey! What\'s up? \n What can I do for you?',
+    'Thank you'=>'You\'re wellcome!',
+);
 			foreach($txtarray as $key => $val){
 							 
 				if($text== strtolower($key)){
