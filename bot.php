@@ -13,10 +13,10 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
-			$response = ['Hi'=>'Hello!',
+			$response = array('Hi'=>'Hello!',
 				      'How are you?'=>'Fine, Thank you :)',
 				      'Hey'=>'Hey! What\'s up?'
-				    ];
+				    );
 			foreach($response as $key => $val)
 			{
 				$result_text[$key] = $val;
