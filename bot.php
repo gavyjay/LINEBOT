@@ -15,12 +15,13 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			$text = strtolower($text);
 			$txtarray = include('textresponse.php');
-			foreach($txtarray as $key => $val){
-				$res = 'ขอโทษค่ะ หาข้อมูลไม่พบ';			 
+			foreach($txtarray as $key => $val){						 
 				if($text== strtolower($key)){
 					$res = $val;	
 				}
 			}
+			
+			if($res== ''){$res == "ไม่พบข้อมูล";}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
