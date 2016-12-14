@@ -12,7 +12,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['text'];
+			$text = strtolower($event['message']['text']);
 			/*$txtarray = array('Hi'=>'Hello!',
 				      'How are you?'=>'Fine, Thank you :)',
 				      'Hey'=>'Hey! What\'s up?'
@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			include 'textresponse.php';
 			foreach($txtarray as $key => $val){
 							 
-				if($text== $key){
+				if($text== strtolower($key)){
 					$res = $val;	
 				}
 			}
