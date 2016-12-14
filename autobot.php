@@ -26,6 +26,16 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 $replyToken = $event['replyToken'];
-$response = $bot->replyText($replyToken, 'hello!');
+//$response = $bot->replyText($replyToken, 'hello!');
+
+$textMessageBuilder = new TextMessageBuilder();
+$response = $bot->replyMessage($replyToken, $textMessageBuilder);
+if ($response->isSucceeded()) {
+    echo 'Succeeded!';
+    return;
+}
+
+// Failed
+echo $response->getHTTPStatus . ' ' . $response->getRawBody();
 
 ?>
