@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 							 
 				if($text== strtolower($key)){
 					$res = $val;	
-				}else{
+				}else if($text!= strtolower($key)){{
 					$res = 'ขอโทษค่ะ หาข้อมูลไม่พบ';
 				}
 			}
