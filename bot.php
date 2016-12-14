@@ -13,10 +13,11 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
-			$txtarray = array('Hi'=>'Hello!',
+			/*$txtarray = array('Hi'=>'Hello!',
 				      'How are you?'=>'Fine, Thank you :)',
 				      'Hey'=>'Hey! What\'s up?'
-				    );
+				    );*/
+			include 'textresponse.php';
 			foreach($txtarray as $key => $val){
 							 
 				if($text== $key){
